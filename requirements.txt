@@ -1,0 +1,22 @@
+# Requirements for UE4 Blueprint Reader
+
+# Core Python packages (usually already included)
+# - struct (built-in)
+# - os (built-in) 
+# - sys (built-in)
+# - typing (built-in)
+
+# For advanced parsing, these might be needed:
+# - numpy  # for binary data manipulation
+# - pyarrow  # for efficient data processing
+# - unreal-engine-parser  # specialized UE4 parser (if available)
+
+# Development tools
+# - pytest  # for testing
+# - black   # code formatting
+# - flake8  # linting
+
+# Note: A full UE4 blueprint parser would require:
+# 1. Understanding of UE4's serialization format
+# 2. Access to UE4's C++ libraries or tools
+# 3. Knowledge of UObject structures and their binary representation
