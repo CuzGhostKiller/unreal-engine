@@ -7,6 +7,7 @@ This is a basic implementation that provides the framework for reading UE4 bluep
 1. Parses file headers to identify UE4 files
 2. Provides structure for extracting blueprint information
 3. Shows how to handle file loading and error cases
+4. Supports Unreal Engine version detection and handling
 
 ## Limitations
 
@@ -19,6 +20,20 @@ The current implementation has significant limitations:
 3. **Version Compatibility**: Different UE4 versions have different file formats and serialization methods.
 
 4. **Blueprint Node Information**: Actual blueprint node graphs, connections, variables, functions, etc. are not parsed.
+
+## Version Handling
+
+The reader now supports detecting and handling different UE4 versions:
+
+1. **Path-based Detection**: Parses installation paths like "UE_4.27", "UE_5.0"
+2. **Build.version Parsing**: Reads version information from Build.version files
+3. **Version-specific Logic**: Allows for version-specific handling of file formats
+
+This is important because:
+- UE4 file formats changed between versions
+- Serialization methods differ between versions
+- UObject structures may have different layouts
+- Property types and references can vary
 
 ## Future Improvements
 

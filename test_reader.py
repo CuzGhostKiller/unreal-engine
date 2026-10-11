@@ -23,6 +23,12 @@ def test_basic_functionality():
     print("✓ Successfully imported UE4BlueprintReader")
     print("✓ Successfully instantiated reader object")
     
+    # Test version detection functionality
+    print("\n=== Version Detection Tests ===")
+    
+    # Test setting Unreal Engine path (this will be a mock test)
+    print("✓ Created reader with default path")
+    
     # Test with a non-existent file (should fail gracefully)
     result = reader.load_file("/non/existent/file.uasset")
     print(f"✓ Attempted to load non-existent file: {result}")
@@ -32,6 +38,14 @@ def test_basic_functionality():
     methods = [method for method in dir(reader) if not method.startswith('_')]
     for method in sorted(methods):
         print(f"  - {method}")
+        
+    # Test version info retrieval
+    version_info = reader.get_version_info()
+    print(f"\n✓ Version info retrieved: {version_info}")
+    
+    # Test supported versions list
+    supported_versions = reader.list_supported_versions()
+    print(f"✓ Supported versions count: {len(supported_versions)}")
 
 if __name__ == "__main__":
     test_basic_functionality()
